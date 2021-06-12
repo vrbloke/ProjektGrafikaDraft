@@ -31,7 +31,7 @@ MyFrame1::MyFrame1( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	wxBoxSizer* bSizer3;
 	bSizer3 = new wxBoxSizer( wxHORIZONTAL );
 	
-	m_staticText2 = new wxStaticText( this, wxID_ANY, _("predkosci"), wxDefaultPosition, wxSize( 65,-1 ), 0 );
+	m_staticText2 = new wxStaticText( this, wxID_ANY, _("prędkości"), wxDefaultPosition, wxSize( 65,-1 ), 0 );
 	m_staticText2->Wrap( -1 );
 	bSizer3->Add( m_staticText2, 0, wxALL, 5 );
 	
@@ -62,7 +62,7 @@ MyFrame1::MyFrame1( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	wxBoxSizer* bSizer5;
 	bSizer5 = new wxBoxSizer( wxHORIZONTAL );
 	
-	m_staticText6 = new wxStaticText( this, wxID_ANY, _("plaszczyzny"), wxDefaultPosition, wxSize( 65,-1 ), 0 );
+	m_staticText6 = new wxStaticText( this, wxID_ANY, _("płaszczyzny"), wxDefaultPosition, wxSize( 65,-1 ), 0 );
 	m_staticText6->Wrap( -1 );
 	bSizer5->Add( m_staticText6, 0, wxALL, 5 );
 	
@@ -90,10 +90,10 @@ MyFrame1::MyFrame1( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	
 	bSizer2->Add( bSizer5, 1, wxEXPAND, 5 );
 	
-	m_buttonPrismData = new wxButton( this, wxID_ANY, _("Wczytaj dane bryly"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_buttonPrismData = new wxButton( this, wxID_ANY, _("Wczytaj dane bryły"), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer2->Add( m_buttonPrismData, 0, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
 	
-	m_buttonSaveAnimation = new wxButton( this, wxID_ANY, _("Zapisz animacje"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_buttonSaveAnimation = new wxButton( this, wxID_ANY, _("Zapisz animację"), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer2->Add( m_buttonSaveAnimation, 0, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
 	
 	wxBoxSizer* bSizer6;
@@ -111,7 +111,7 @@ MyFrame1::MyFrame1( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	wxBoxSizer* bSizer9;
 	bSizer9 = new wxBoxSizer( wxHORIZONTAL );
 	
-	m_staticText11 = new wxStaticText( this, wxID_ANY, _("Polozenie pl."), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText11 = new wxStaticText( this, wxID_ANY, _("Położenie pł."), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText11->Wrap( -1 );
 	bSizer9->Add( m_staticText11, 0, wxALL, 5 );
 	
@@ -134,6 +134,7 @@ MyFrame1::MyFrame1( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	this->Centre( wxBOTH );
 	
 	// Connect Events
+	m_panel1->Connect( wxEVT_UPDATE_UI, wxUpdateUIEventHandler( MyFrame1::Redraw ), NULL, this );
 	m_TextCtrlVelocityX->Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( MyFrame1::VelocityXOnText ), NULL, this );
 	m_TextCtrlVelocityY->Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( MyFrame1::VelocityYOnText ), NULL, this );
 	m_textCtrlVelocityZ->Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( MyFrame1::VelocityZOnText ), NULL, this );
@@ -148,6 +149,7 @@ MyFrame1::MyFrame1( wxWindow* parent, wxWindowID id, const wxString& title, cons
 MyFrame1::~MyFrame1()
 {
 	// Disconnect Events
+	m_panel1->Disconnect( wxEVT_UPDATE_UI, wxUpdateUIEventHandler( MyFrame1::Redraw ), NULL, this );
 	m_TextCtrlVelocityX->Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( MyFrame1::VelocityXOnText ), NULL, this );
 	m_TextCtrlVelocityY->Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( MyFrame1::VelocityYOnText ), NULL, this );
 	m_textCtrlVelocityZ->Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( MyFrame1::VelocityZOnText ), NULL, this );

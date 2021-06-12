@@ -59,6 +59,7 @@ class MyFrame1 : public wxFrame
 		wxSlider* m_sliderPlaneLocation;
 		
 		// Virtual event handlers, overide them in your derived class
+		virtual void Redraw( wxUpdateUIEvent& event ) { event.Skip(); }
 		virtual void VelocityXOnText( wxCommandEvent& event ) { event.Skip(); }
 		virtual void VelocityYOnText( wxCommandEvent& event ) { event.Skip(); }
 		virtual void VelocityZOnText( wxCommandEvent& event ) { event.Skip(); }
@@ -72,7 +73,7 @@ class MyFrame1 : public wxFrame
 	
 	public:
 		
-		MyFrame1( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Przekroje bryl 3D"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 772,487 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
+		MyFrame1( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Przekroje brył 3D"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 772,487 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
 		
 		~MyFrame1();
 	
