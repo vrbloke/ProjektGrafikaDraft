@@ -43,7 +43,7 @@ public:
   float getPx() const { return m_px; }
   void setPy(float _py) { m_py = _py; }
   float getPy() const { return m_py; }
-  void setPz(float _pz) { m_pz = m_pz; }
+  void setPz(float _pz) { m_pz = _pz; }
   float getPz() const { return m_pz; }
   void setPos(float _pos) { m_pos = _pos; }
   float getPos() const { return m_pos; }
