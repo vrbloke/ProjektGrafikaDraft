@@ -30,6 +30,9 @@
     <ClInclude Include="HelperStructs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FrameStepper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GUI.cpp">

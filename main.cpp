@@ -1,5 +1,8 @@
-#include <wx/wx.h>
 #include "UIFrame.h"
+
+#include <wx/wx.h>
+
+#include <memory>
 
 class MyApp : public wxApp {
 public:

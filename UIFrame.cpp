@@ -1,8 +1,15 @@
 #include "UIFrame.h"
+#include "FrameStepper.h"
 
 #include <string>
 #include <stdexcept>
 #include <fstream>
+
+UIFrame::UIFrame(wxWindow* parent) : MyFrame1(parent), 
+m_cfg(new Configurer(this)), 
+m_rnd(new Renderer(m_cfg)),
+m_stp(new FrameStepper(this))
+{}
 
 void UIFrame::VelocityXOnText(wxCommandEvent& event) { 
   try {
@@ -81,7 +88,13 @@ void UIFrame::PlaneLocationOnScrollChanged(wxScrollEvent& event) {
 
 }
 
-void UIFrame::Redraw(wxUpdateUIEvent& event) {
+void UIFrame::Redraw(wxPaintEvent& event) {
+  Redraw();
+}
+
+void UIFrame::Redraw() {
+  if (!(m_stp->IsAlive()))
+    m_stp->Run();
   wxClientDC dc(m_panel1);
   m_rnd->Render(&dc, m_panel1->GetSize().x, m_panel1->GetSize().y);
 }

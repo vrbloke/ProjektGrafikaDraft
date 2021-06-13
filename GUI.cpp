@@ -134,8 +134,8 @@ MyFrame1::MyFrame1( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	this->Centre( wxBOTH );
 	
 	// Connect Events
+	m_panel1->Connect( wxEVT_PAINT, wxPaintEventHandler( MyFrame1::Redraw ), NULL, this );
 	m_panel1->Connect( wxEVT_SIZE, wxSizeEventHandler( MyFrame1::PanelResized ), NULL, this );
-	m_panel1->Connect( wxEVT_UPDATE_UI, wxUpdateUIEventHandler( MyFrame1::Redraw ), NULL, this );
 	m_TextCtrlVelocityX->Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( MyFrame1::VelocityXOnText ), NULL, this );
 	m_TextCtrlVelocityY->Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( MyFrame1::VelocityYOnText ), NULL, this );
 	m_textCtrlVelocityZ->Connect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( MyFrame1::VelocityZOnText ), NULL, this );
@@ -150,8 +150,8 @@ MyFrame1::MyFrame1( wxWindow* parent, wxWindowID id, const wxString& title, cons
 MyFrame1::~MyFrame1()
 {
 	// Disconnect Events
+	m_panel1->Disconnect( wxEVT_PAINT, wxPaintEventHandler( MyFrame1::Redraw ), NULL, this );
 	m_panel1->Disconnect( wxEVT_SIZE, wxSizeEventHandler( MyFrame1::PanelResized ), NULL, this );
-	m_panel1->Disconnect( wxEVT_UPDATE_UI, wxUpdateUIEventHandler( MyFrame1::Redraw ), NULL, this );
 	m_TextCtrlVelocityX->Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( MyFrame1::VelocityXOnText ), NULL, this );
 	m_TextCtrlVelocityY->Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( MyFrame1::VelocityYOnText ), NULL, this );
 	m_textCtrlVelocityZ->Disconnect( wxEVT_COMMAND_TEXT_UPDATED, wxCommandEventHandler( MyFrame1::VelocityZOnText ), NULL, this );

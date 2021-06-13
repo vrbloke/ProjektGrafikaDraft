@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Configurer.h" />
+    <ClInclude Include="FrameStepper.h" />
     <ClInclude Include="GUI.h" />
     <ClInclude Include="HelperStructs.h" />
     <ClInclude Include="Renderer.h" />
