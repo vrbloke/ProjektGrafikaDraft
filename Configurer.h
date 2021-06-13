@@ -2,36 +2,11 @@
 
 #define DEFAULT_BLUE
 
+#include "HelperStructs.h"
+
 #include <vector>
 
 class UIFrame;
-
-struct Point {
-  float x, y, z;
-  Point(float _x, float _y, float _z) : x(_x), y(_y), z(_z) {}
-  Point() : x(0), y(0), z(0) {}
-};
-
-struct Color {
-  int r, g, b;
-  Color(int _r, int _g, int _b) : r(_r), g(_g), b(_b) {}
-#ifdef DEFAULT_BLUE
-  Color() : r(0), g(0), b(255) {}
-#endif //default blue
-#ifndef DEFAULT_BLUE
-  Color() : r(0), g(0), b(0) {}
-#endif
-};
-
-typedef Color Colour;
-
-struct Segment {
-  Point begin, end;
-  Color color;
-  Segment(Point _begin, Point _end, Color _color) : begin(_begin), end(_end), color(_color) {}
-  Segment(Point _begin, Point _end) : begin(_begin), end(_end), color(Color(0,0,255)) {}
-  Segment() : begin(Point()), end(Point()), color(Color(0, 0, 255)) {}
-};
 
 class Configurer {
 private:

@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClInclude Include="Configurer.h" />
     <ClInclude Include="GUI.h" />
+    <ClInclude Include="HelperStructs.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="UIFrame.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="HelperStructs.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="UIFrame.cpp" />
@@ -102,7 +104,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
     </ClCompile>
     <Link>
