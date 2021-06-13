@@ -26,6 +26,7 @@
     <ClInclude Include="UIFrame.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Configurer.cpp" />
     <ClCompile Include="GUI.cpp" />
     <ClCompile Include="HelperStructs.cpp" />
     <ClCompile Include="main.cpp" />

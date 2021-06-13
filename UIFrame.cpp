@@ -57,23 +57,7 @@ void UIFrame::PrismDataClick(wxCommandEvent& event) {
 
   if (WxOpenFileDialog.ShowModal() == wxID_OK)
   {
-    double x1, y1, z1, x2, y2, z2;
-    int r, g, b;
-    
-    std::vector<Segment>& data = m_cfg->getData();
-
-    std::ifstream in(WxOpenFileDialog.GetPath().ToAscii());
-    if (in.is_open())
-    {
-      data.clear();
-      while (!in.eof())
-      {
-        in >> x1 >> y1 >> z1 >> x2 >> y2 >> z2 >> r >> g >> b;
-        data.push_back(Segment(Point(x1, y1, z1), Point(x2, y2, z2), Color(r, g, b)));
-      }
-      in.close();
-    }
-    m_cfg->setData(data);
+    m_cfg->loadPrism(WxOpenFileDialog.GetPath().ToAscii());
   }
 }
 

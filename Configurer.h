@@ -46,6 +46,6 @@ public:
 
   void startAnimation();
 
-  void loadPrism(const char* filename) const;
-  void saveAnimation(const char* filename) const;
+  void loadPrism(const char* filename);
+  void saveAnimation(const char* filename);
 };
