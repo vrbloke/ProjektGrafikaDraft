@@ -20,5 +20,11 @@ void Configurer::loadPrism(const char* filename) {
 }
 
 void Configurer::saveAnimation(const char* filename) {
-
+  std::ofstream prismLog("prismLog.txt");
+  for (auto& seg : m_prismData) {
+    prismLog << '\t' << seg.begin.x << '\t' << seg.begin.y << '\t' << seg.begin.z << '\t' <<
+      seg.end.x << '\t' << seg.end.y << '\t' << seg.end.z << '\t' <<
+      seg.color.r << '\t' << seg.color.g << '\t' << seg.color.b << std::endl;
+  }
+  prismLog.close();
 }
