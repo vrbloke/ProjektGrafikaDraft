@@ -59,6 +59,7 @@ class MyFrame1 : public wxFrame
 		wxSlider* m_sliderPlaneLocation;
 		
 		// Virtual event handlers, overide them in your derived class
+		virtual void PanelResized( wxSizeEvent& event ) { event.Skip(); }
 		virtual void Redraw( wxUpdateUIEvent& event ) { event.Skip(); }
 		virtual void VelocityXOnText( wxCommandEvent& event ) { event.Skip(); }
 		virtual void VelocityYOnText( wxCommandEvent& event ) { event.Skip(); }

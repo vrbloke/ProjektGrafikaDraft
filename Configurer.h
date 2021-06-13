@@ -17,8 +17,12 @@ private:
   float m_vx, m_vy, m_vz;
   // Wspó³rzêdne wektora normalnego p³aszczyzny.
   float m_px, m_py, m_pz;
-  // Po³o¿enie p³aszczyzny wzd³u¿ kierunku wektora normalnego (do animacji).
+  // Po³o¿enie p³aszczyzny wzd³u¿ kierunku wektora normalnego (0: œrodek uk³adu).
   float m_pos;
+  // Rozmiary panelu, na którym wyœwietlany jest przekrój.
+  int m_sizeX, m_sizeY;
+  // Po³o¿enie panelu, na którym wyœwietlany jest przekrój.
+  int m_posX, m_posY;
 public:
   Configurer(UIFrame* parent) :
     m_vx(0), m_vy(0), m_vz(0),
@@ -41,6 +45,14 @@ public:
   float getPz() const { return m_pz; }
   void setPos(float _pos) { m_pos = _pos; }
   float getPos() const { return m_pos; }
+  void setSizeX(int _sizeX) { m_sizeX = _sizeX;  }
+  int getSizeX() const { return m_sizeX; }
+  void setSizeY(int _sizeY) { m_sizeY = _sizeY; }
+  int getSizeY() const { return m_sizeY; }
+  void setPosX(int _posX) { m_posX = _posX; }
+  int getPosX() { return m_posX; }
+  void setPosY(int _posY) { m_posY = _posY; }
+  int getPosY() { return m_posY; }
   std::vector<Segment>& getData() { return m_prismData; }
   void setData(std::vector<Segment>& _data) { m_prismData = _data; }
 

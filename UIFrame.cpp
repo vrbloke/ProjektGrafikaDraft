@@ -70,10 +70,18 @@ void UIFrame::SaveAnimationClick(wxCommandEvent& event) {
   }
 }
 
+void UIFrame::PanelResized(wxSizeEvent& event) {
+  m_cfg->setSizeX(m_panel1->GetSize().x);
+  m_cfg->setSizeY(m_panel1->GetSize().y);
+  m_cfg->setPosX(m_panel1->GetPosition().x);
+  m_cfg->setPosY(m_panel1->GetPosition().y);
+}
+
 void UIFrame::PlaneLocationOnScrollChanged(wxScrollEvent& event) {
 
 }
 
 void UIFrame::Redraw(wxUpdateUIEvent& event) {
-  wxClientDC name(m_panel1);
+  wxClientDC dc(m_panel1);
+  m_rnd->Render(&dc, m_panel1->GetSize().x, m_panel1->GetSize().y);
 }
