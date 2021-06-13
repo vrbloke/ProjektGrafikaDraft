@@ -18,3 +18,7 @@ void Configurer::loadPrism(const char* filename) {
     in.close();
   }
 }
+
+void Configurer::saveAnimation(const char* filename) {
+
+}

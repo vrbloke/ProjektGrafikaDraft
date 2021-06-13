@@ -62,7 +62,12 @@ void UIFrame::PrismDataClick(wxCommandEvent& event) {
 }
 
 void UIFrame::SaveAnimationClick(wxCommandEvent& event) {
+  wxDirDialog WxOpenDirDialog(this, _("Choose a folder to save animation"), _(""));
 
+  if (WxOpenDirDialog.ShowModal() == wxID_OK)
+  {
+    m_cfg->saveAnimation(WxOpenDirDialog.GetPath().ToAscii());
+  }
 }
 
 void UIFrame::PlaneLocationOnScrollChanged(wxScrollEvent& event) {
